@@ -1,0 +1,30 @@
+{
+  "name": "custom-klotski-v",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "npm run web:dev",
+    "build": "npm run web:build",
+    "web:dev": "cross-env VITE_PLATFORM=browser vite",
+    "web:build": "cross-env VITE_PLATFORM=browser vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
+    "ant-design-vue": "^3.2.10",
+    "localforage": "^1.10.0",
+    "lodash": "^4.17.21",
+    "nanoid": "^4.0.0",
+    "pinia": "^2.0.16",
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.6",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "cross-env": "^7.0.3",
+    "sass": "^1.53.0",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.1",
+    "vue-tsc": "^0.38.8"
+  }
+}
