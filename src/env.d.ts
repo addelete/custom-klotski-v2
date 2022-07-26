@@ -19,3 +19,13 @@ type DBGame = {
   md5: string; // md5
   version: string; // 版本
 };
+
+type Size = {
+  width: number;
+  height: number;
+};
+
+type Point = {
+  x: number;
+  y: number;
+};

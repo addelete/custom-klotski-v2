@@ -2,7 +2,9 @@ import { Ref, ref } from 'vue';
 import cache from '../utils/cache';
 
 /**
+ * 
  * 配合MovableDivider组件使用
+ * 
  * @param {object} options 参数配置
  * @param {string} options.cacheKey 缓存key
  * @param {number} options.defaultSize 缓存没有时的默认值

@@ -62,6 +62,7 @@ function onMouseUp() {
 <style lang="scss" scoped>
 .movable-divider {
   position: relative;
+  z-index: 999;
   .mask {
     width: 100vw;
     height: 100vh;

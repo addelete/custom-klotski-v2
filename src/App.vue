@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import MovableDivider from "./components/MovableDivider.vue";
-import BarButton from "./components/BarButton.vue";
 import { useGameStore } from "./stores/gameStore";
 import useResizable from "./hooks/useResizable";
+import MovableDivider from "./components/MovableDivider.vue";
+import BarButton from "./components/BarButton.vue";
+import GameDesigner from "./components/GameDesigner.vue";
 
 const gameStore = useGameStore();
 
@@ -49,7 +50,8 @@ const [rightSideWidth, rightSideOnResize, rightSideOnResizeEnd] = useResizable({
       @drag-end="leftSideOnResizeEnd"
     />
     <div class="main">
-      主体区域，放置布局设计器，布局胜利条件、布局解答步骤、布局玩一玩
+      <!-- 主体区域，放置布局设计器，布局胜利条件、布局解答步骤、布局玩一玩 -->
+      <GameDesigner />
     </div>
     <MovableDivider
       direction="vertical"
@@ -77,6 +79,7 @@ body {
   --primary-background-color: #f3f3f3;
   --primary-border-color: #ddd;
   --primary-active-border-color: #c9ddee;
+  --side-background-color: #fff;
 }
 
 * {
@@ -105,31 +108,21 @@ body {
     flex: 1;
     display: flex;
     overflow: hidden;
-    .leftbar {
+    .leftbar, .rightbar {
       writing-mode: vertical-lr;
       width: 24px;
       flex-shrink: 0;
       display: flex;
       align-items: center;
-      border-right: 1px solid var(--primary-border-color);
     }
-    .rightbar {
-      writing-mode: vertical-lr;
-      width: 24px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      border-left: 1px solid var(--primary-border-color);
-    }
-    .leftside {
+
+    .leftside, .rightside {
       width: 280px;
+      position: relative;
+      z-index: 9;
       flex-shrink: 0;
       overflow: auto;
-    }
-    .rightside {
-      width: 280px;
-      flex-shrink: 0;
-      overflow: auto;
+      background-color: var(--side-background-color);
     }
     .main {
       flex: 1;
